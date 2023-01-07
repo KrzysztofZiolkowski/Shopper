@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ui:
+    build:
+      context: .
+      dockerfile: ./Shopper.Web.Ui/.docker/Dockerfile
+    image: shopper-ui
+    ports:
+      - '5000:80'
+  api:
+    build:
+      context: .
+      dockerfile: ./Shopper.Web.Api/.docker/Dockerfile
+    image: shopper-api
+    ports:
+      - '5005:80'
